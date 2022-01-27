@@ -25,3 +25,7 @@ Note: This is required only once
    - roslaunch ```bacchus_gazebo vineyard_demo.launch world_name:=vineyard_small```
    - roslaunch ```uol_cmp9767m_tutorial topo_nav.launch```
    - rosrun ```topological_utils load_yaml_map.py $(rospack find uol_cmp9767m_tutorial)/maps/robotnavigation.yaml```
+   - In another terminal run ```rosrun uol_cmp9767m_tutorial set_topo_nav_goal.py``` to move the robot
+   - in a new terminal run ```rosrun uol_cmp9767m_tutorial countgrapes.py``` to count the grape bunches
+ 
+NOTE: You can visualize the topologican map by opening the topological map visualisation config for RVIZ in ```uol_cmp9767m_tutorial/config/topo_nav.rviz```. Then click the green arrows at the nodes seen in RVIZ to send topological_navigation goals to the robot. 
