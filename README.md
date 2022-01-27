@@ -2,6 +2,12 @@
 This is a software system for an agricultural robot that works in a (simulated) bacchus vineyard and is used to estimate the crop yield of the field. The robot navigates autonomously around the vineyard and count all the grape bunches present. WayPoints (Nodes) are provided at specific locations to enable the robot move around. The robot is also equipped with lidars and camera sensors for obstacle avoidance and objection detectioin respectively.
 
 # Update and Install Dependencies
+Here is an automated way to install all dependencies:
+1. Complete step 1 of ```Running the Simulation```
+2. ```cd ~/catkin_ws/src/RobotProgramming/```
+3. ```./install_dependencies.sh```
+
+Alternatively:
 1. ```sudo apt-get update && sudo apt-get upgrade```
 2. ```sudo apt-get install ros-melodic-uol-cmp9767m-base ros-melodic-desktop```
 3. run ```source /opt/ros/melodic/setup.bash``` on every terminal you want to use
