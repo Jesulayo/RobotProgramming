@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import rospy, image_geometry, tf
 from sensor_msgs.msg import Image, CameraInfo
 from geometry_msgs.msg import PoseStamped
