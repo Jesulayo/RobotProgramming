@@ -1,4 +1,5 @@
 # RobotProgramming
+This is a software system for an agricultural robot that works in a (simulated) bacchus vineyard and is used to estimate the crop yield of the field. The robot navigates autonomously around the vineyard and count all the grape bunches present. WayPoints (Nodes) are provided at specific locations to enable the robot move around. The robot is also equipped with lidars and camera sensors for obstacle avoidance and objection detectioin respectively.
 
 # Update and Install Dependencies
 1. ```sudo apt-get update && sudo apt-get upgrade```
