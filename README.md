@@ -14,7 +14,8 @@ This is a software system for an agricultural robot that works in a (simulated) 
         ros-melodic-topological-utils \
         ros-melodic-topological-navigation \
         ros-melodic-topological-navigation-msgs \
-        ros-melodic-strands-navigation
+        ros-melodic-strands-navigation \
+        ros-melodic-image-geometry
      ```
 # Running the Simulation
 1. Create a catkin_ws:
