@@ -7,26 +7,29 @@
 4. ```sudo apt install python-pip```
 5. ```pip install numpy``` to install numpy
 6. ```pip install -U scikit-learn``` to install scikit-learn
-
-roslaunch bacchus_gazebo vineyard_demo.launch world_name:=vineyard_small
-If this doesn't work, make sure you check TASK 0 again... Or, just to be on the safe side, you may want to make sure that all simulator instances really have been terminated: killall -9 gzserver
-```
-sudo apt-get install \
-    ros-melodic-opencv-apps \
-    ros-melodic-topological-utils \
-    ros-melodic-topological-navigation \
-    ros-melodic-topological-navigation-msgs \
-    ros-melodic-strands-navigation
-```
+7.  ```
+    sudo apt-get install \
+        ros-melodic-opencv-apps \
+        ros-melodic-topological-utils \
+        ros-melodic-topological-navigation \
+        ros-melodic-topological-navigation-msgs \
+        ros-melodic-strands-navigation
+     ```
 # Running the Simulation
-1. Create a folder (named ```mongodb```) in your user home directory. This folder will store all database files required to run the topological map.
+1. Create a catkin_ws:
+   - ```mkdir -p ~/catkin_ws/src```
+   - ```cd ~/catkin_ws/```
+   - ```catkin_make```
+   - ```source devel/setup.bash```
+   - clone/copy this repository into ```~/catkin_ws/src```
+2.  Create a folder (named ```mongodb```) in your user home directory. This folder will store all database files required to run the topological map.
 Note: This is required only once
-2. Launch the simulation setup:
-   - roslaunch ```bacchus_gazebo vineyard_demo.launch world_name:=vineyard_small```
-   - roslaunch ```uol_cmp9767m_tutorial topo_nav.launch```
-   - rosrun ```topological_utils load_yaml_map.py $(rospack find uol_cmp9767m_tutorial)/maps/robotnavigation.yaml```
+3. Launch the simulation setup:
+   - ```roslaunch bacchus_gazebo vineyard_demo.launch world_name:=vineyard_small```. If it doesn't work, you may want to make sure that all simulator instances  have been terminated: ```killall -9 gzserver```
+   - ```roslaunch uol_cmp9767m_tutorial topo_nav.launch```
+   - ```rosrun topological_utils load_yaml_map.py $(rospack find uol_cmp9767m_tutorial)/maps/robotnavigation.yaml```
    - In another terminal run ```rosrun uol_cmp9767m_tutorial set_topo_nav_goal.py``` to move the robot. This starts the navigation of the robot and starts counting when the robot get to WayPoint0
-3. Alternatively,
+4. Alternatively,
    - you can visualize the topologican map by opening the topological map visualisation config for RVIZ in ```uol_cmp9767m_tutorial/config/topo_nav.rviz```
    - click the green arrows at the nodes seen in RVIZ to send topological_navigation goals to the robot
    - in a new terminal ```run rosrun uol_cmp9767m_tutorial countgrapes.py``` to count the grape bunches
